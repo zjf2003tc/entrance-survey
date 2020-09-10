@@ -1,0 +1,46 @@
+---
+title: "Entrance_Survey_Analysis"
+author: "Zach Friedman"
+date: "9/10/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+```
+
+
+```{r}
+DF <- read.csv("hudk4050-entrance-survey.csv",header = TRUE) %>% tbl_df
+```
+
+```{r}
+DF %>% str
+typeof(DF$program)
+```
+
+```{r}
+DF %>% ggplot + geom_bar(mapping = aes(x = program))
+```
+
+# Simple Math
+
+```{r}
+7+8
+x <- 8
+mode(x)
+
+```
+
+# Variable Manipulation
+
+```{r}
+mean(DF$UTC)
+
+DF$UTC.ms <- DF$UTC*DF$math.stat
+```
+
